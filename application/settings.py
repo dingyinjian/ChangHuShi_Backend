@@ -78,8 +78,20 @@ INSTALLED_APPS = [
     'app_example',  # 测试样例
     'app_init',  # 数据初始化
     'app_links', #链接管理
-    'app_upload'
+    'app_upload',
+    'app_device',#设备管理
+    'app_nurse_dept',#长护师机构管理
+    'app_nurse' ,#长护师
+    'app_service_object',#服务对象管理
+    'app_sop',  # SOP管理
+    'app_task',  # 任务管理
 ]
+
+# VLM 配置（供 app_sop 分析服务使用）
+VLM_API_BASE = config("VLM_API_BASE", default="http://127.0.0.1:6009/v1")
+VLM_API_KEY = config("VLM_API_KEY", default="EMPTY")
+VLM_MODEL_NAME = config("VLM_MODEL_NAME", default="qwen3-vl-30b-a3b-instruct-fp8")
+VLM_TIMEOUT_SECONDS = float(config("VLM_TIMEOUT_SECONDS", default=60))
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -417,6 +429,13 @@ CELERYD_MAX_TASKS_PER_CHILD = 100  # worker执行100个任务自动销毁，防�
 CELERYD_TASK_SOFT_TIME_LIMIT = 6000  # 单个任务的运行时间不超过此值(秒)，否则会抛出(SoftTimeLimitExceeded)异常停止任务
 CELERY_DISABLE_RATE_LIMITS = True  # 即使任务设置了明确的速率限制，也禁用所有速率限制。
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+# 为 True 时 .delay() 在当前进程同步执行，不连 Redis broker（本机未起 Redis 时用；生产请 False 并起 Redis+worker）
+CELERY_TASK_ALWAYS_EAGER = str(config("CELERY_TASK_ALWAYS_EAGER", default="False")).lower() in (
+    "true",
+    "1",
+    "yes",
+)
+CELERY_TASK_EAGER_PROPAGATES = True  # eager 时任务异常直接抛给调用方，便于排查
 
 # ================================================= #
 # ******************** redis缓存配置 ******************** #

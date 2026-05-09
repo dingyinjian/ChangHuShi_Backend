@@ -38,7 +38,13 @@ urlpatterns = [
     path('tool/', include('app_monitor.urls')),
     path('link/', include('app_links.urls')),
     path('api/',include('app_upload.urls')),
-    path('product/', include('app_product.urls')),
+    path('api/',include('app_device.urls')),
+    path('api/',include('app_nurse_dept.urls')),
+    path('api/',include('app_nurse.urls')),
+    path('api/',include('app_service_object.urls')),
+    path('system/', include('app_sop.urls')),
+    path('system/', include('app_task.urls')),
 ]
+
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

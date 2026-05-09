@@ -19,3 +19,29 @@ logs
 # information for Eclipse / Flash Builder.
 __pycache__/
 *.pyc
+
+# Python 虚拟环境（依赖成千上万文件，切勿提交）
+venv/
+.venv/
+env/
+ENV/
+
+# Django / 本地运行产物
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# 上传/录制的视频（体积大，勿提交；SOP 等上传目录在 media/ 下）
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+celerybeat-schedule
+celerybeat.pid
+
+# 环境变量（若仓库需示例用 *.env.example，勿提交真实密钥）
+.env
+.env.local
+.env.*.local

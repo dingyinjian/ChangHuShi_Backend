@@ -1,0 +1,102 @@
+[
+    {
+        "model": "app_menu.menu",
+        "pk": 826210000000001,
+        "fields": {
+            "creator": null,
+            "modifier": null,
+            "update_datetime": "2026-04-21T10:00:00",
+            "create_datetime": "2026-04-21T10:00:00",
+            "parent": null,
+            "icon": "elementMonitor",
+            "menu_name": "设备管理",
+            "sort": 4,
+            "path": "/device",
+            "component": "/system/device/index",
+            "is_iframe": "1",
+            "is_link": "",
+            "menu_type": "M",
+            "is_hide": "0",
+            "is_keep_alive": "1",
+            "is_affix": "1",
+            "permission": "system:device:list",
+            "status": "0",
+            "remark": "设备管理菜单"
+        }
+    },
+    {
+        "model": "app_menu.menu",
+        "pk": 826210000000002,
+        "fields": {
+            "creator": null,
+            "modifier": null,
+            "update_datetime": "2026-04-21T10:00:00",
+            "create_datetime": "2026-04-21T10:00:00",
+            "parent": 826210000000001,
+            "icon": "",
+            "menu_name": "新增设备",
+            "sort": 1,
+            "path": "",
+            "component": "",
+            "is_iframe": null,
+            "is_link": "",
+            "menu_type": "F",
+            "is_hide": "0",
+            "is_keep_alive": "1",
+            "is_affix": "1",
+            "permission": "system:device:add",
+            "status": "0",
+            "remark": "设备管理-新增按钮"
+        }
+    },
+    {
+        "model": "app_menu.menu",
+        "pk": 826210000000003,
+        "fields": {
+            "creator": null,
+            "modifier": null,
+            "update_datetime": "2026-04-21T10:00:00",
+            "create_datetime": "2026-04-21T10:00:00",
+            "parent": 826210000000001,
+            "icon": "",
+            "menu_name": "编辑设备",
+            "sort": 2,
+            "path": "",
+            "component": "",
+            "is_iframe": null,
+            "is_link": "",
+            "menu_type": "F",
+            "is_hide": "0",
+            "is_keep_alive": "1",
+            "is_affix": "1",
+            "permission": "system:device:edit",
+            "status": "0",
+            "remark": "设备管理-编辑按钮"
+        }
+    },
+    {
+        "model": "app_menu.menu",
+        "pk": 826210000000004,
+        "fields": {
+            "creator": null,
+            "modifier": null,
+            "update_datetime": "2026-04-21T10:00:00",
+            "create_datetime": "2026-04-21T10:00:00",
+            "parent": 826210000000001,
+            "icon": "",
+            "menu_name": "删除设备",
+            "sort": 3,
+            "path": "",
+            "component": "",
+            "is_iframe": null,
+            "is_link": "",
+            "menu_type": "F",
+            "is_hide": "0",
+            "is_keep_alive": "1",
+            "is_affix": "1",
+            "permission": "system:device:delete",
+            "status": "0",
+            "remark": "设备管理-删除按钮"
+        }
+    }
+]
